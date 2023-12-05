@@ -7,6 +7,7 @@ jobs:
   job:
     runs-on: ubuntu-latest
     steps:
-      - run : "cat /proc/cpuinfo"
+      - uses: actions/checkout@v3
+      - run : "./ConsoleApp2"
         
       
