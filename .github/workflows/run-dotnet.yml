@@ -2,7 +2,10 @@ name: "Run Dotnet"
 
 on:
   workflow_dispatch:
-
+  
+permissions:
+  contents: read
+  
 jobs:
   job:
     runs-on: ubuntu-latest
