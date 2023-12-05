@@ -1,0 +1,12 @@
+name: "Run Dotnet"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    steps:
+      - run : "cat /proc/cpuinfo"
+        
+      
