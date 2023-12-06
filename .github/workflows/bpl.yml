@@ -1,0 +1,21 @@
+name: "Build Package Listing"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run : chmod u+x BuildPackageListing
+        
+      - name: "Build"
+        env:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ./BuildPackageListing
+
+      - run : |
+          ls -l
+          cat vpm.json
