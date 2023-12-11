@@ -8,14 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run : chmod u+x BuildPackageListing
+      - uses: gomorroth/vpm-build-repository@v1.1
         
-      - name: "Build"
-        env:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          ./BuildPackageListing
-
       - run : |
           ls -l
           cat vpm.json
